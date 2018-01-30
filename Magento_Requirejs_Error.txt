@@ -1,0 +1,37 @@
+https://magento.stackexchange.com/questions/64802/magento-2-404-error-for-scripts-and-css
+
+   1. from magento/bin(shift+right click-->command:--
+    magento setup:static-content:deploy
+
+   2. Open up app/etc/di.xml 
+    Find the virtualType name="developerMaterialization" section. 
+    In that section you'll find an item name="view_preprocessed" that needs to be modified or deleted.
+     You can modify it by changing the contents from Magento\Framework\App\View\Asset\MaterializationStrategy\Symlink to Magento\Framework\App\View\Asset\MaterializationStrategy\Copy
+
+   3. Delete the files under pub/static to get rid of any existing symlinks. You may want to be careful not to delete the .htaccess file.
+   4.Delete the file under var/cache and var/page_cache
+
+STYLE
+
+/---Comment----/
+PAGE HEADER:
+<style type="text/css">
+@media (min-width: 768px), print {
+ .page-header {
+   background-color: lavender
+}
+NEVIGATION PANEL:
+@media (min-width: 768px), print {.page-header .panel.wrapper {background-color: #39c}}
+//--footer-----//
+@media (min-width: 768px), print {.page-footer{background-color: black}}
+</style>
+/----....//
+
+<style type="text/css">
+@media (min-width: 768px), print {
+ .page-header {
+   background-color: lavender
+}
+@media (min-width: 768px), print {.page-header .panel.wrapper {background-color: #39c}}
+@media (min-width: 768px), print {.page-footer{background-color: black}}
+</style>

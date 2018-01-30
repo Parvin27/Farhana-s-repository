@@ -1,0 +1,22 @@
+/---Comment----/
+PAGE HEADER:
+<style type="text/css">
+@media (min-width: 768px), print {
+ .page-header {
+   background-color: lavender
+}
+NEVIGATION PANEL:
+@media (min-width: 768px), print {.page-header .panel.wrapper {background-color: #39c}}
+//--footer-----//
+@media (min-width: 768px), print {.page-footer{background-color: black}}
+</style>
+/----....//
+
+<style type="text/css">
+@media (min-width: 768px), print {
+ .page-header {
+   background-color: lavender
+}
+@media (min-width: 768px), print {.page-header .panel.wrapper {background-color: #39c}}
+@media (min-width: 768px), print {.page-footer{background-color: black}}
+</style>
